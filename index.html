@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special for You ✨</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&family=Sacramento&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Background Elements -->
+    <div class="bg-gradient"></div>
+    <div id="particles-container"></div>
+
+    <!-- Music Player -->
+    <audio id="bg-music" loop>
+        <source src="musik/ssstik.io_1777946577478.mp3" type="audio/mpeg">
+    </audio>
+    <button id="music-toggle" class="music-btn">
+        <i class="fas fa-music"></i>
+    </button>
+
+    <main id="main-container">
+        <!-- Page 1: Welcome -->
+        <section id="page-1" class="page active">
+            <div class="content">
+                <h1 class="glow-text">Halo Cantik...</h1>
+                <p class="subtitle">Aku punya sesuatu yang spesial buat kamu.</p>
+                <button class="primary-btn" onclick="startJourney()">Klik di Sini <i class="fas fa-heart"></i></button>
+            </div>
+        </section>
+
+        <!-- Page 2: Morning Greeting -->
+        <section id="page-2" class="page">
+            <div class="content glass-card">
+                <h2 class="title-serif">Semangat Pagi ✨</h2>
+                <p class="message-text">"Semangat pagi, semoga aktivitasnya dilancarkan dan bahagia terusss yaa..."</p>
+                <p class="extra-text">Kamu itu alasan aku semangat hari ini.</p>
+                <button class="next-btn" onclick="nextPage(3)">Lanjut <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Page 3: Photo -->
+        <section id="page-3" class="page">
+            <div class="content">
+                <div class="polaroid-container">
+                    <div class="polaroid">
+                        <img src="WhatsApp Image 2026-05-05 at 08.54.40.jpeg" alt="Your beautiful photo">
+                        <div class="polaroid-caption">Cantik banget sih... 😍</div>
+                    </div>
+                </div>
+                <button class="next-btn" onclick="nextPage(4)">Ada lagi nih... <i
+                        class="fas fa-arrow-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Page 4: Video -->
+        <section id="page-4" class="page">
+            <div class="content glass-card video-card">
+                <h2 class="glow-text" style="font-size: 2.8rem; margin-bottom: 30px;">Hei, Dengerin Ya...</h2>
+                <div class="video-wrapper">
+                    <video id="feature-video" controls>
+                        <source src="WhatsApp Video 2026-05-05 at 08.54.40.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <p class="message-text">"Jangan terlalu pusing dan keras sama diri sendiri ya. Kalau capek, istirahat. Ingat, kamu nggak sendirian. Selalu ada aku di sini yang siap dengerin cerita dan jadi sandaran kamu."</p>
+                <button class="next-btn" onclick="nextPage(5)">Lanjut <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </section>
+        <!-- Page 5: Message 1 -->
+        <section id="page-5" class="page">
+            <div class="content glass-card">
+                <h2 class="title-serif">Buat Kamu...</h2>
+                <p class="message-text">"Mungkin kita memang baru sebentar sedeket ini. Tapi entah kenapa, pelan-pelan mengenal kamu jadi salah satu hal paling manis yang terjadi sama aku akhir-akhir ini."</p>
+                <button class="next-btn" onclick="nextPage(6)">Lanjut <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Page 6: Message 2 -->
+        <section id="page-6" class="page">
+            <div class="content glass-card">
+                <h2 class="title-serif">Satu Hal Lagi</h2>
+                <p class="message-text">"Tetap jadi diri kamu yang sekarang ya, karena aku suka kamu apa adanya."</p>
+                <button class="next-btn" onclick="nextPage(7)">Lanjut <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Page 7: Dreams & Promises -->
+        <section id="page-7" class="page">
+            <div class="content glass-card">
+                <h2 class="title-serif">Harapan Aku...</h2>
+                <p class="message-text">"Aku ingin kita bisa terus kayak gini, saling support dan bahagia bareng-bareng."</p>
+                <div class="floating-icons">
+                    <i class="fas fa-star floating-star"></i>
+                    <i class="fas fa-moon floating-moon"></i>
+                </div>
+                <button class="next-btn" onclick="nextPage(8)">Terakhir... <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Page 8: Closing -->
+        <section id="page-8" class="page">
+            <div class="content glass-card">
+                <h2 class="sacramento-text">Thank You</h2>
+                <p class="message-text">"Aku tahu masa lalu mungkin pernah ngasih kamu luka. Tapi sekarang, izinkan aku jadi tempat kamu bersandar dan menyembuhkan semua trauma itu. Aku janji, aku nggak akan buat kamu sakit. Pegang tanganku, kita lewatin semuanya sama-sama ya..."</p>
+                <div class="heart-animation">
+                    <i class="fas fa-heart floating-heart"></i>
+                </div>
+                <button class="primary-btn" onclick="restartJourney()">Lihat Lagi? <i class="fas fa-redo"></i></button>
+            </div>
+        </section>
+    </main>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
